@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="h"><ellipse cx="0" cy="-7" rx="5.6" ry="7.6"/></clipPath>
+    <clipPath id="b"><circle cx="41" cy="15" r="6.4"/></clipPath>
+    <g id="racket">
+      <g clip-path="url(#h)" stroke-width="1" stroke-opacity="0.75">
+        <path d="M-2.4-16V2M0-16V2M2.4-16V2M-7-11.5H7M-7-8.5H7M-7-5.5H7M-7-2.5H7"/>
+      </g>
+      <ellipse cx="0" cy="-7" rx="5.6" ry="7.6" fill="none" stroke-width="2.4"/>
+      <path d="M0 0.8V12" stroke-width="3.2" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#5b34a8"/>
+  <path d="M7 54H57" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2.4" stroke-linecap="round"/>
+  <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="0.9">
+    <path d="M24 44.5H40M24 47.5H40M24 50.5H40"/>
+    <path d="M26.7 42V54M29.4 42V54M32 42V54M34.6 42V54M37.3 42V54"/>
+  </g>
+  <path d="M23 41.5H41" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M23 41V54.5M41 41V54.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M18.5 21C22 13 27 10.5 33 11.5" fill="none" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 3.6"/>
+  <use href="#racket" transform="translate(13 33) rotate(-28)" stroke="#ffffff"/>
+  <use href="#racket" transform="translate(51 33) rotate(28)" stroke="#c4b2f4"/>
+  <circle cx="41" cy="15" r="6.4" fill="#dff24a"/>
+  <g clip-path="url(#b)" fill="none" stroke="#ffffff" stroke-width="1.4">
+    <path d="M35.6 10.2Q39.4 15 35.6 19.8"/>
+    <path d="M46.4 10.2Q42.6 15 46.4 19.8"/>
+  </g>
+</svg>
