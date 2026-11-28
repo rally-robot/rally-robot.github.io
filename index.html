@@ -310,8 +310,8 @@ footer { padding-block: 56px 40px; color: var(--muted); font-size: 13px; }
 <section class="hero wrap" id="video" aria-label="Real-robot video">
   <div class="video-head">
     <div class="tabs" role="tablist" aria-label="Video">
-      <button role="tab" id="tab-short" aria-selected="true" data-video="short">Short-horizon tasks<span class="len">3:46</span></button>
-      <button role="tab" id="tab-long" aria-selected="false" data-video="long">Long-horizon tasks<span class="len">5:17</span></button>
+      <button role="tab" id="tab-short" aria-selected="true" data-video="short">Short-horizon tasks<span class="len">1:53</span></button>
+      <button role="tab" id="tab-long" aria-selected="false" data-video="long">Long-horizon tasks<span class="len">3:20</span></button>
     </div>
   </div>
   <div class="player">
@@ -349,7 +349,7 @@ footer { padding-block: 56px 40px; color: var(--muted); font-size: 13px; }
   </div>
   <figure class="figure" style="margin-top: 24px">
     <a href="static/images/teaser.jpg" target="_blank" rel="noopener"><img src="static/images/teaser.jpg" alt="Overview of RALLY: (a) existing harnesses, (b) Alice reads Bob's code and traces and proposes scenes as an adversary or tasks as a cooperator, (c) results of the final policy." loading="lazy" width="2600" height="1301"></a>
-    <figcaption><b>(a)</b> Existing harnesses call an LLM in every episode, or refine a policy only on its given scenes, so it fails under real-world perturbations. <b>(b)</b> In RALLY, Alice reads Bob's code and traces to find weaknesses, then proposes task-preserving scene variations as an adversary or related tasks as a cooperator. Bob refines the same policy. <b>(c)</b> The final policy is more robust on LIBERO-Pro, LIBERO-Plus and LIBERO-MAX, generalizes to new LIBERO tasks, and transfers zero-shot to a real Franka arm.</figcaption>
+    <figcaption><b>(a)</b> Existing harnesses call an LLM in every episode, or refine a policy only on its given scenes, failing under real-world perturbations. <b>(b)</b> In RALLY, Alice reads Bob's code and traces to find weaknesses, then proposes task-preserving scene variations as an adversary or related tasks as a cooperator. Bob refines the same policy. <b>(c)</b> The final policy is more robust on LIBERO-Pro, LIBERO-Plus and LIBERO-MAX, generalizes to new LIBERO tasks, and transfers zero-shot to a real Franka arm.</figcaption>
   </figure>
 
   <div class="roles">
@@ -514,8 +514,8 @@ footer { padding-block: 56px 40px; color: var(--muted); font-size: 13px; }
   </div>
 
   <div class="sub">
-    <h3>Long-horizon replace</h3>
-    <p class="lead">The robot removes the object in a container and places a second object there. Bob refines on a replace task built for this experiment, outside LIBERO, and each Alice plays 16 cycles.</p>
+    <h3>Long-horizon task</h3>
+    <p class="lead">The robot removes the object in a container and places a second object there. Bob refines on a replace task built for this experiment, outside LIBERO, and each Alice plays 16 cycles. The last test starts instead from task 9 of LIBERO-10, putting a mug in the microwave and closing it.</p>
     <figure class="figure" style="margin-bottom: 18px">
       <img src="static/images/real_world_replace.jpg" alt="Simulation scene and real-world test conditions for the long-horizon replace task." loading="lazy" width="1938" height="984">
     </figure>
@@ -552,21 +552,22 @@ footer { padding-block: 56px 40px; color: var(--muted); font-size: 13px; }
       src: "static/videos/rally_short.mp4", poster: "static/images/poster_short.jpg",
       chapters: [
         { t: 0, mode: "adv", what: "Can in box, original scene", bob: "8", alice: "20" },
-        { t: 30.1, mode: "adv", what: "Can in box, occluded", bob: "0", alice: "14" },
-        { t: 73.4, mode: "adv", what: "Can in box, moving target", bob: "0", alice: "20" },
-        { t: 105.6, mode: "coop", what: "Different object: strawberry in box", bob: "0", alice: "19" },
-        { t: 146.5, mode: "coop", what: "Different object and target: cup in bowl", bob: "0", alice: "20" },
-        { t: 172.3, mode: "coop", what: "Different object and target: cup in cup", bob: "0", alice: "15" },
-        { t: 198.3, mode: "coop", what: "Different target: can in bowl", bob: "0", alice: "20" }
+        { t: 15.05, mode: "adv", what: "Can in box, occluded", bob: "0", alice: "14" },
+        { t: 36.7, mode: "adv", what: "Can in box, moving target", bob: "0", alice: "20" },
+        { t: 52.8, mode: "coop", what: "Different object: strawberry in box", bob: "0", alice: "19" },
+        { t: 73.25, mode: "coop", what: "Different object and target: cup in bowl", bob: "0", alice: "20" },
+        { t: 86.15, mode: "coop", what: "Different object and target: cup in cup", bob: "0", alice: "15" },
+        { t: 99.15, mode: "coop", what: "Different target: can in bowl", bob: "0", alice: "20" }
       ]
     },
     "long": {
       src: "static/videos/rally_long.mp4", poster: "static/images/poster_long.jpg",
       chapters: [
         { t: 0, mode: "adv", what: "Replace strawberry with can, occluded", bob: "0", alice: "15" },
-        { t: 78.0, mode: "adv", what: "Replace strawberry with can, moving target", bob: "0", alice: "16" },
-        { t: 163.6, mode: "coop", what: "Different target: replace strawberry with can in a bowl", bob: "3", alice: "17" },
-        { t: 241.0, mode: "coop", what: "Different object: replace can with green tea box in a tray", bob: "0", alice: "14" }
+        { t: 39.0, mode: "adv", what: "Replace strawberry with can, moving target", bob: "0", alice: "16" },
+        { t: 81.8, mode: "coop", what: "Different target: replace strawberry with can in a bowl", bob: "3", alice: "17" },
+        { t: 120.5, mode: "coop", what: "Different object: replace can with green tea box in a tray", bob: "0", alice: "14" },
+        { t: 158.35, mode: "coop", what: "From LIBERO-10 task 9: put strawberry in a cabinet and close the door", bob: "0", alice: "12" }
       ]
     }
   };
@@ -715,7 +716,7 @@ footer { padding-block: 56px 40px; color: var(--muted); font-size: 13px; }
   // Other models.
   dumbbell($("#chart-sol"), [
     { label: "Spatial", a: 61.3, b: 84.7 }, { label: "Object", a: 66.5, b: 87.9 }, { label: "Goal", a: 70.6, b: 88.7 },
-    { label: "All", a: 66.0, b: 87.1, total: true }
+    { label: "All", a: 66.0, b: 87.0, total: true }
   ]);
   dumbbell($("#chart-fable"), [
     { label: "Spatial", a: 38.5, b: 98.5 }, { label: "Object", a: 11.1, b: 83.7 }, { label: "Goal", a: 0.0, b: 67.4 },
@@ -736,13 +737,14 @@ footer { padding-block: 56px 40px; color: var(--muted); font-size: 13px; }
     el.innerHTML = h + "</tbody>";
   }
   rwTable($("#rw-short"), [
-    { title: "Adversarial Alice · can in box", mode: "adv", rows: [["Original task", 8, 20, 0], ["Occluded", 0, 14, 30.1], ["Moving target", 0, 20, 73.4]] },
-    { title: "Cooperative Alice · new tasks", mode: "coop", rows: [["Different object: strawberry in box", 0, 19, 105.6], ["Different target: can in a bowl", 0, 20, 198.3], ["Different object and target: cup in a bowl", 0, 20, 146.5], ["Different object and target: cup in another cup", 0, 15, 172.3]] }
+    { title: "Adversarial Alice · can in box", mode: "adv", rows: [["Original task", 8, 20, 0], ["Occluded", 0, 14, 15.05], ["Moving target", 0, 20, 36.7]] },
+    { title: "Cooperative Alice · new tasks", mode: "coop", rows: [["Different object: strawberry in box", 0, 19, 52.8], ["Different target: can in a bowl", 0, 20, 99.15], ["Different object and target: cup in a bowl", 0, 20, 73.25], ["Different object and target: cup in another cup", 0, 15, 86.15]] }
   ], "short");
   rwTable($("#rw-long"), [
     { title: "", mode: "", rows: [["Original task: replace strawberry with can in a tray", 8, 18, null]] },
-    { title: "Adversarial Alice", mode: "adv", rows: [["Occluded", 0, 15, 0], ["Moving target", 0, 16, 78.0]] },
-    { title: "Cooperative Alice · new tasks", mode: "coop", rows: [["Different target: replace strawberry with can in a bowl", 3, 17, 163.6], ["Different object: replace can with green tea box in a tray", 0, 14, 241.0]] }
+    { title: "Adversarial Alice", mode: "adv", rows: [["Occluded", 0, 15, 0], ["Moving target", 0, 16, 39.0]] },
+    { title: "Cooperative Alice · new tasks", mode: "coop", rows: [["Different target: replace strawberry with can in a bowl", 3, 17, 81.8], ["Different object: replace can with green tea box in a tray", 0, 14, 120.5]] },
+    { title: "Cooperative Alice · starting from task 9 of LIBERO-10", mode: "coop", rows: [["Different object and container: put strawberry in a cabinet and close the door", 0, 12, 158.35]] }
   ], "long");
   document.querySelectorAll(".watch").forEach(function (b) {
     b.addEventListener("click", function () {
